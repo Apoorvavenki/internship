@@ -1,0 +1,234 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microbe Prediction</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+            background-image: url('{% static "images/img2.jpg" %}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #070707; 
+        }
+        .table-container {
+            display: flex;
+        }
+        table {
+            top: 250px;
+            border-collapse: collapse;
+            width: 300px;
+            margin-right: 20px; 
+        }
+        .positioned-button {
+            position: absolute;
+            top: 650px; 
+            left: 650px; 
+            padding: 10px 20px;
+            background-color: #3ea3be;
+            font-size: 20px;
+            color: #efe9e9;
+        }
+        .positioned-button:hover {
+            background-color: #0c1416; 
+        }
+        .result-row {
+            margin-top: 70px;
+            margin-left: 170px;font-family: 'Times New Roman', Times, serif; 
+            font-size: 25px; 
+            color: #080808; 
+        }
+
+    </style>
+</head>
+<body>
+
+   
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+    <div class="table-container">
+       
+        
+        <table>
+            <tr>
+                <td>Serial No</td>
+                <td>
+                    <input type="text" name="textserialno">
+                </td>
+            </tr>
+            <tr>
+                <td>Solidity</td>
+                <td>
+                    <input type="text" name="textSolidity">
+                </td>
+            </tr>
+            <tr>
+                <td>Eccentricity</td>
+                <td>
+                    <input type="text" name="textEccentricity">
+                </td>
+            </tr>
+            <tr>
+                <td>EquivDiameter</td>
+                <td>
+                    <input type="text" name="textEquivDiameter">
+                </td>
+            </tr>
+            <tr>
+                <td>Extrema</td>
+                <td>
+                    <input type="text" name="textExtrema">
+                </td>
+            </tr>
+            <tr>
+                <td>FilledArea</td>
+                <td>
+                    <input type="text" name="textFilledArea">
+                </td>
+            </tr>
+            <tr>
+                <td>Extent</td>
+                <td>
+                    <input type="text" name="textExtent">
+                </td>
+            </tr>
+            <tr>
+                <td>Orientation</td>
+                <td>
+                    <input type="text" name="textOrientation">
+                </td>
+            </tr>
+            <tr>
+                <td>EulerNumber</td>
+                <td>
+                    <input type="text" name="textEulerNumber">
+                </td>
+            </tr>
+            <tr>
+                <td>BoundingBox1</td>
+                <td>
+                    <input type="text" name="textsBoundingBox1">
+                </td>
+            </tr>
+            <tr>
+                <td>BoundingBox2</td>
+                <td>
+                    <input type="text" name="textBoundingBox2">
+                </td>
+            </tr>
+            <tr>
+                <td>BoundingBox3</td>
+                <td>
+                    <input type="text" name="textBoundingBox3">
+                </td>
+            </tr>
+            <tr>
+                <td>BoundingBox4</td>
+                <td>
+                    <input type="text" name="textBoundingBox4">
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>ConvexHull1</td>
+                <td>
+                    <input type="text" name="textConvexHull1">
+                </td>
+            </tr>
+            <tr>
+                <td>ConvexHull2</td>
+                <td>
+                    <input type="text" name="textConvexHull2">
+                </td>
+            </tr>
+            <tr>
+                <td>ConvexHull3</td>
+                <td>
+                    <input type="text" name="textConvexHull3">
+                </td>
+            </tr>
+            <tr>
+                <td>ConvexHull4</td>
+                <td>
+                    <input type="text" name="textConvexHull4">
+                </td>
+            </tr>
+            <tr>
+                <td>MajorAxisLength</td>
+                <td>
+                    <input type="text" name="textMajorAxisLength">
+                </td>
+            </tr>
+            <tr>
+                <td>MinorAxisLength</td>
+                <td>
+                    <input type="text" name="textMinorAxisLength">
+                </td>
+            </tr>
+            <tr>
+                <td>Perimeter</td>
+                <td>
+                    <input type="text" name="textPerimeter">
+                </td>
+            </tr>
+            <tr>
+                <td>ConvexArea</td>
+                <td>
+                    <input type="text" name="textConvexArea">
+                </td>
+            </tr>
+            <tr>
+                <td>Centroid1</td>
+                <td>
+                    <input type="text" name="textCentroid1">
+                </td>
+            </tr>
+            <tr>
+                <td>Centroid2</td>
+                <td>
+                    <input type="text" name="textCentroid2">
+                </td>
+            </tr>
+            <tr>
+                <td>Area</td>
+                <td>
+                    <input type="text" name="textArea">
+                </td>
+            </tr>
+            <tr>
+                <td>Raddi</td>
+                <td>
+                    <input type="text" name="textraddi">
+                </td>
+            </tr>
+            <button type="text" class="positioned-button" name="buttonpred">Predict</button>
+        </table>
+    </div>
+    <div class="result-row">
+        <table>
+            <tr>
+                <td>{{ result }}</td>
+            </tr>
+        </table>
+    </div>
+    
+    </form>
+    
+       
+</body>
+</html>
+{% endblock %}

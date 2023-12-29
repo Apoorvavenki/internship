@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% block content %}
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            margin: 20px;
+            background-image: url('{% static "images/img2.jpg" %}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #070707; 
+        }
+
+        
+
+        main {
+            max-width: 1400px;
+            margin: 20px auto;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    
+
+    <main>
+        <section>
+            <h2>About Microbes</h2>
+            <p>Microbes are tiny living things that are found all around us and are too small to be seen by the naked eye. They live in water, soil, and in the air. The human body is home to millions of these microbes too, also called microorganisms.
+ 
+                Microbes come in a huge variety of shapes - everything from rods to spheres, even corkscrew shapes. They are all about the same size, with some a little bigger than others and smaller than others. They don’t have much of a color unless we apply a stain to them, which we sometimes do to see them under the microscope.
+                 
+                Microbes can be useful as well as harmful. Certain microbes cause severe infections and diseases and can also spoil food and other materials. While others play an important role in maintaining environmental balance.
+            </p>
+        </section>
+
+        
+       
+    </main>
+
+</body>
+</html>
+{% endblock %}

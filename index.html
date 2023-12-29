@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #dcf2f4d8;
+            border-radius: 8px;
+        }
+    
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #3ea3be;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #0c1416;
+        }
+        .microbe {
+            text-align: center;
+            margin-top: 30px; 
+            font-size: 35px;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        .microbe h2 {
+            color: #021f3f;
+        }
+        rgb(51, 51, 51)rgb(3, 20, 45)
+    </style>
+</head>
+<body id="bg" style="background-image: url('{% static 'basics/images/ima.jpg' %}');">
+    
+    <nav>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'about' %}">About</a>
+            </li>
+            
+        </ul>
+    </nav>
+    <div class="microbe">
+        <h2>Prediction of Microbes using KNN</h2>
+        
+    </div>
+    
+
+    
+
+</body>
+
+{% block content %}
+{% endblock %}
+
+</html>
